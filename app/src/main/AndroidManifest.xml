@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lifengqiang.audiouse">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.音频使用">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.group.GroupActivity"
+            android:label="音频分组" />
+        <activity
+            android:name=".ui.audiolist.AudioListActivity"
+            android:label="音频列表" />
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:label="扫描" />
+        <activity android:name=".ui.play.PlayActivity" />
+        <activity android:name=".jni.JniActivity" />
+
+        <service
+            android:name=".codec.ThreadService"
+            android:exported="false">
+        </service>
+    </application>
+
+</manifest>
