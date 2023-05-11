@@ -6,7 +6,7 @@
 重复退出进入主Activity不会影响播放；
 支持播放时在任意界面拖动进度条，切歌切换循环模式；
 
-[演示视频zhuanlan.zhihu.com/p/628689881](zhuanlan.zhihu.com/p/628689881)
+[演示视频zhuanlan.zhihu.com/p/628689881](https://zhuanlan.zhihu.com/p/628689881)
 
 开发开始时间：2021.10.17
 
