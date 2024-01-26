@@ -1,16 +1,20 @@
 package com.lifengqiang.audiouse.utils
 
-import android.annotation.SuppressLint
-import com.lifengqiang.audiouse.MainActivity
+import android.content.Context
 import java.io.File
+import java.io.IOException
 
 class FileManager {
     companion object {
         private var appFiles: File? = null
 
-        @SuppressLint("SdCardPath")
         private fun getDataDirectoryPath(): String {
-            return "/sdcard/Android/data/${MainActivity::class.java.`package`?.name}"
+            if (appFiles == null) throw IOException("appFiles not init")
+            return appFiles!!.absolutePath
+        }
+
+        fun setDataDirectoryPath(context: Context) {
+            appFiles = context.getExternalFilesDir("")?.parentFile
         }
 
         private fun getAppFilePath(): File {
